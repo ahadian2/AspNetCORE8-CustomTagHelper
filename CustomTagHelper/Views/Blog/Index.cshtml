@@ -1,0 +1,51 @@
+﻿@addTagHelper *, CustomTagHelper
+@model IEnumerable<CustomTagHelper.Models.carousel>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="~/css/site.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet" />
+    <link href="~/owlcarousel2-2.3.4/dist/assets/owl.carousel.min.css" rel="stylesheet" />
+
+</head>
+<body>
+    <authentication authenticated=false></authentication>
+    <hr />
+
+    @* <div class="owl-carousel owl-theme">
+    <div class="item">
+    <img src="~/img/slider/s1.jpg" />
+    <div>
+    <h4>Title 1</h4>
+    <p>ِDescription</p>
+    </div>
+    </div>
+    </div> *@
+
+
+    <my-carousel items="@Model.ToList()"></my-carousel>
+
+    <hr />
+    <phone phone-coler="Green" phone-number="09121486770" phone-text="تماس با من"></phone>
+    <hr />
+    <custom-btn icon="fas fa-paper-plane" type="submit" text="ارسال"></custom-btn>
+    <custom-btn icon="fas fa-save" type="update" text="بروزرسانی"></custom-btn>
+    <custom-btn icon="fas fa-trash-alt" type="delete" text="حذف"></custom-btn>
+    <hr />
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/owlcarousel2-2.3.4/dist/owl.carousel.min.js"></script>
+   <conf-carousel carousel-item="5" carousel-loop=true carouselautoplay=true carouselmargin="10" carousel-timeout="1000" 
+   carouselnav="true" ></conf-carousel>
+
+
+</body>
+</html>
